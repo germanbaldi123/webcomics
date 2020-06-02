@@ -349,6 +349,7 @@ public class ListasDAO {
                 comic.setComicDescripcion(rs.getString("com_descripcion"));
                 comic.setComicFoto(rs.getString("com_tapa"));
                 comic.setComicId(rs.getInt("com_id"));
+                comic.setComicFecha(rs.getString("fecha"));
 
                 publicUser.add(comic);
                 

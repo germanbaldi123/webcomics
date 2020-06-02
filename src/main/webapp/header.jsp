@@ -4,7 +4,7 @@
 
                     <div class="container-block">
                       <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-                                <a href="comic" class="navbar-brand">La Guarida</a>
+                                <a href="index.html" class="navbar-brand">La Guarida</a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu">
                                         <span class="navbar-toggler-icon"></span>
                                 </button>

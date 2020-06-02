@@ -6,10 +6,12 @@ package com.mycompany.webcomics.servlet;
  * and open the template in the editor.
  */
 
+import com.google.gson.Gson;
 import com.mycompany.webcomics.model.dao.ComicDAO;
 import com.mycompany.webcomics.model.entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -49,8 +51,9 @@ public class ListaComicServlet extends HttpServlet {
             ComicDAO comicDAO = new ComicDAO(); 
             ArrayList listaComic = comicDAO.getListadoComic();
             
-  
-            
+            Gson gson = new Gson();
+            out.print(gson.toJson(listaComic)); 
+             out.flush();
             request.setAttribute("listaComics", listaComic);
      
      dispatcher.forward(request, response);

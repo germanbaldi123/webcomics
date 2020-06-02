@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
        
         
         if ( session.getAttribute("user") != null ){
-            request.getRequestDispatcher("/comic").forward(request, response);
+            request.getRequestDispatcher("/ListaComics").forward(request, response);
             
         }else{
             RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
          
        
          
-         RequestDispatcher dispatcher = request.getRequestDispatcher("/comic");
+         RequestDispatcher dispatcher = request.getRequestDispatcher("/ListaComics");
          
            session.setAttribute("user", user);
          
