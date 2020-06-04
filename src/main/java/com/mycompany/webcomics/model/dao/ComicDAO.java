@@ -92,6 +92,77 @@ public class ComicDAO {
     }
     
     
+     public ArrayList<Comic> buscarComic(String terminoBuscado){
+        
+         ArrayList<Comic> listaComics = new ArrayList<>(); 
+         
+         try {
+
+            ConnectionManager connectionManager = new ConnectionManager();
+            Connection con = connectionManager.getConnection();
+            Statement stm;
+            ResultSet rs;
+            String sql;
+
+            sql = "SELECT * FROM comic, categorias, estados, users WHERE" +
+                    " com_titulo LIKE '%" + terminoBuscado + "%'" +
+                    " AND com_cat_id = cat_id AND com_est_id = est_id AND "+
+                    " com_user_id = user_id ";
+
+            stm = con.createStatement();
+            rs = stm.executeQuery(sql);
+
+            
+          
+
+            while (rs.next()) {
+                Comic comic = new Comic();
+
+                comic.setComicTitulo(rs.getString("com_titulo"));
+
+                Categoria categoria = new Categoria();
+                categoria.setCatID(rs.getInt("cat_id"));
+                categoria.setCatNombre(rs.getString("cat_nombre"));
+                comic.setComicCategoria(categoria);
+
+               
+                comic.setComicAutor(rs.getString("com_id_autor"));
+
+                Estado estado = new Estado();
+                estado.setEstadoId(rs.getInt("est_id"));
+                estado.setEstadoNombre(rs.getString("est_nombre"));
+                comic.setComicEstado(estado);
+
+                User usuario = new User();
+                usuario.setUserId(rs.getInt("user_id"));
+                usuario.setUserName(rs.getString("username"));
+                usuario.setUserPass(rs.getString("user_pass"));
+                usuario.setUserNombre(rs.getString("user_nombre"));
+                usuario.setUserNombre(rs.getString("user_apellido"));
+                usuario.setUserEmail(rs.getString("user_email"));
+                usuario.setUserFoto(rs.getString("user_foto"));
+                usuario.setUserDescripcion(rs.getString("user_desc"));
+                comic.setComicUser(usuario);
+
+                comic.setComicDescripcion(rs.getString("com_descripcion"));
+                comic.setComicFoto(rs.getString("com_tapa"));
+                comic.setComicId(rs.getInt("com_id"));
+                comic.setComicFecha(rs.getString("fecha"));
+
+                listaComics.add(comic);
+                
+
+            }
+             stm.close();
+            rs.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Error al obtener el listado de comics");
+        }
+        
+        return listaComics;
+    }
+    
     public ArrayList<Comic> getListadoCat(int idCat){
         
          ArrayList<Comic> listaComicsCat = new ArrayList<>(); 

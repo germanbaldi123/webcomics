@@ -1,10 +1,9 @@
-package com.mycompany.webcomics.servlet;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.mycompany.webcomics.servlet;
 
 import com.google.gson.Gson;
 import com.mycompany.webcomics.ajax.RespuestaJson;
@@ -27,8 +26,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author OUTLET
  */
-@WebServlet(urlPatterns = {"/ListaComics"})
-public class ListaComicServlet extends HttpServlet {
+@WebServlet(name = "getComics", urlPatterns = {"/getComics"})
+public class getComics extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,7 +40,7 @@ public class ListaComicServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     RequestDispatcher dispatcher = request.getRequestDispatcher("listacomics.jsp");
+      RequestDispatcher dispatcher = request.getRequestDispatcher("listacomics.jsp");
      
      
             HttpSession session = request.getSession();
@@ -49,8 +48,29 @@ public class ListaComicServlet extends HttpServlet {
             User userSession = (User) session.getAttribute("user");
             
             request.setAttribute("user", userSession );
+            PrintWriter out = response.getWriter();
+            ComicDAO comicDAO = new ComicDAO(); 
             
+            ArrayList<Comic> listaComic; 
+            
+            if(request.getParameter("search") != null){
+                
+                 listaComic = comicDAO.buscarComic(request.getParameter("search"));
+            }
+            else {
+                listaComic = comicDAO.getListadoComic();
+            }
+            
+           
+   
+            
+            Gson gson = new Gson();
+            RespuestaJson res = new RespuestaJson("ok", "", listaComic); 
+            out.print(gson.toJson(res)); 
+             out.flush();
+        
 
+            request.setAttribute("listaComics", listaComic);
      
      dispatcher.forward(request, response);
     }

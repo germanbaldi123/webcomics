@@ -11,7 +11,7 @@
      <%@include file="head.jsp" %>
     
     <body>
-    <%@include file="header.jsp" %>
+    <%@include file="headerdos.jsp" %>
      <div class="container">
          <br>
          <form action="">

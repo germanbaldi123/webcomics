@@ -13,7 +13,7 @@
                                 <div class="navbar-collapse collapse" id="menu">
 
                                         <form class="form-inline my-8 col-lg-10">
-                                            <input class="form-control col-sm-6" type="search" placeholder="Search" aria-label="Search">
+                                            <input class="form-control col-sm-6" type="search" id="buscador" placeholder="Search" aria-label="Search">
                                             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                                         </form>
                                         <ul class="navbar-nav mr-auto my-2 my-lg-0">

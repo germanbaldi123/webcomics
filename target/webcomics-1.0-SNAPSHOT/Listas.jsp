@@ -15,7 +15,7 @@
 <html>
     <%@include file="head.jsp" %>
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="headerdos.jsp" %>
         <div class="container-fluid">
         <nav class="navbar">
             <ul class="btn-group btn-group" role="group">

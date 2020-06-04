@@ -25,7 +25,7 @@
                                 <div class="navbar-collapse collapse" id="menu">
 
                                         <form class="form-inline my-8 col-lg-10">
-                                            <input class="form-control col-sm-6" type="search" placeholder="Search" aria-label="Search">
+                                            <input class="form-control col-sm-6" type="search" id="buscador" placeholder="Search" aria-label="Search">
                                             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                                         </form>
                                         <ul class="navbar-nav mr-auto my-2 my-lg-0">
@@ -86,26 +86,7 @@
     <section class="container main">
         <div class="row" id="cajaPubli">
             
-            <% for(Comic unComic: listaComic){ %>      
-                <div class="col-md-4 post container">
-                                           <div class="caja">
-                                               <a href="#" class="thumbnail" role="button" data-toggle="modal" data-target="#exampleModal"> <img class="img-thumbnail miniatura" src=" <%= unComic.getComicFoto() %> " alt=""></a>
-                                               
-                                                   
-                                                   <div class="caption">
-                                           
-                                                   <h2><a class="post-titulo"> <%= unComic.getComicTitulo() %> </a></h2>
-                                                   <span ><a class="text-right"> <%= unComic.getComicCategoria().getCatNombre() %></a></span>
-                                                   <br>
-                                                   <span class="post-fecha"><%=unComic.getComicFecha()%> </span> por <span class="post-autor"><a> <%= unComic.getComicAutor() %> </a></span>
-                                                   <p class="post-reseña"> <%= unComic.getComicDescripcion() %>
-                                                           </p>
-                                                   
-                                               </div> 
-                                                   
-                                               </div> 
-                                               </div>
-                                                           <% } %>
+          
            
              
  
@@ -114,6 +95,7 @@
          
  
     </section>
+            <script src="js/index.js"></script>
             <%@include file="scripts.jsp" %> 
     </body>
 </html>

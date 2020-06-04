@@ -8,12 +8,11 @@
 <%@page import="com.mycompany.webcomics.model.entities.Comic"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% User user = (User) request.getAttribute("user");%>
-<% ArrayList<Comic> publicUser = (ArrayList<Comic>) request.getAttribute("publicUser"); %>
 <!DOCTYPE html>
 <html>
     <%@include file="head.jsp" %>
     <body>
-    <%@include file="header.jsp" %>
+    <%@include file="headerdos.jsp" %>
     <br>
     
     <h2 class="text-center">Tus Publicaciones</h2>

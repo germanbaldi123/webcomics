@@ -7,11 +7,13 @@ package com.mycompany.webcomics.servlet;
 
 import com.google.gson.Gson;
 import com.mycompany.webcomics.ajax.RespuestaJson;
+import com.mycompany.webcomics.model.dao.ComicDAO;
 import com.mycompany.webcomics.model.dao.ListasDAO;
 import com.mycompany.webcomics.model.entities.Comic;
 import com.mycompany.webcomics.model.entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,7 +50,9 @@ public class getPublicaciones extends HttpServlet {
         int userID = userSession.getUserId();
         
         PrintWriter out = response.getWriter();
-
+        
+        //publicaciones de usuario
+      
         ListasDAO listasDAO = new ListasDAO();
         ArrayList<Comic> publicUser = listasDAO.getPublicUser(userID);
         
@@ -56,7 +60,12 @@ public class getPublicaciones extends HttpServlet {
         RespuestaJson res = new RespuestaJson("ok", "", publicUser);
         out.print(gson.toJson(res));
         out.flush();
-        request.setAttribute("publicUser", publicUser);
+        
+        
+     
+        
+        
+        
          RequestDispatcher dispatcher= request.getRequestDispatcher("Publicaciones.jsp");
         dispatcher.forward(request, response); 
     }

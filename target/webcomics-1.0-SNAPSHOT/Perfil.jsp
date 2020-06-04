@@ -18,7 +18,7 @@
     <%@include file="head.jsp" %>
     
     <body>
-        <%@include file="header.jsp" %>
+        <%@include file="headerdos.jsp" %>
         <div class="container" id="fondo">
 
      <!--foto de perfil y presentacion-->

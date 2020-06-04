@@ -31,13 +31,7 @@ public class PublicacionesServlet extends HttpServlet {
         
         int userID = userSession.getUserId();
         
-       
-
-        ListasDAO listasDAO = new ListasDAO();
-        ArrayList<Comic> publicUser = listasDAO.getPublicUser(userID);
-        
-      
-        request.setAttribute("publicUser", publicUser);
+    
         
         RequestDispatcher dispatcher= request.getRequestDispatcher("Publicaciones.jsp");
         dispatcher.forward(request, response); 
