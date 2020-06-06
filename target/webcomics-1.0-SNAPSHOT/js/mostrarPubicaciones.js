@@ -9,6 +9,7 @@ function mostrarPublicaciones(){
 async function getComic(){
     
     let url = base  + '/getPublicaciones';
+    //let params = '?method=publicUser'; 
     let response = await fetch(url); 
     let json = await response.json(); 
     return json; 

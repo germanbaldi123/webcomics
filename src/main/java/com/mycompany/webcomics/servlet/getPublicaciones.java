@@ -51,10 +51,10 @@ public class getPublicaciones extends HttpServlet {
         
         PrintWriter out = response.getWriter();
         
-        //publicaciones de usuario
-      
         ListasDAO listasDAO = new ListasDAO();
+        
         ArrayList<Comic> publicUser = listasDAO.getPublicUser(userID);
+      
         
         Gson gson = new Gson();
         RespuestaJson res = new RespuestaJson("ok", "", publicUser);

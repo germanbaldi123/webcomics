@@ -2,6 +2,7 @@ C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\ListasServlet.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\LoginServlet.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\biblioteca.java
+C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\getListas.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\model\dao\ListasDAO.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\model\dao\CategoriaDAO.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\model\entities\Categoria.java
@@ -17,6 +18,7 @@ C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\PublicacionesServlet.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\utils\ConnectionManager.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\getPublicaciones.java
+C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\getComics.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\model\dao\UserDAO.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\servlet\PerfilServlet.java
 C:\Users\OUTLET\Documents\NetBeansProjects\webcomics\src\main\java\com\mycompany\webcomics\ajax\RespuestaJson.java
