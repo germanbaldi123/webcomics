@@ -1,29 +1,22 @@
- 
-     
-   /* var btnEditar = document.getElementById('btnEditar');
-            
-      btnEditar.addEventListener('click', editarComic);
-      
-      var titulo = document.getElementById('titulo').value;
-      var autor = document.getElementById('autor').value;
-      var categoria= document.getElementById('categoria').value;
-      var estado = document.getElementById('estado').value;
-      var fecha = document.getElementById('fecha').value;
-      var descripcion = document.getElementById('descripcion').value;
-                
 
 
-                function editarComic(){
+let titulo = document.getElementById("titulo").value;
+let autor = document.getElementById("autor").value;
+let id = document.getElementById("id").value;
+let descripcion = document.getElementById("descripcion").value;
+let fecha = document.getElementById("fecha").value; 
+let estado = document.getElementById("estado").value; 
 
-                 // alert(btnEditar.value);
+let url = 'http://localhost.webComic/EditarComic';
+let params = `?id=${id}&titulo=${titulo}&autor=${autor}&descripcion=${descripcion}&fecha=${fecha}&estado=${estado}`; 
 
-                  fetch( `Panel?funcion=editar&idComic=${btnEditar.value}&titulo=${titulo}&autor=${autor}&categoria=${categoria}&estado=${estado}&fecha=${fecha}&descripcion=${descripcion}`, {
-                                                            method: 'POST' ,
+async function editarCliente(){
+   await fetch(url + params , {
+        method : 'GET'
+    }
+            )
+        
+  return console.log("comic editado")
+}
 
-                                                              credentials: 'include'
-                                                    } );
-
-                                              alert("publicacion editada exitosamente") 
-
-
-                }*/
+document.getElementById("submit").addEventListener('click', editarCliente); 

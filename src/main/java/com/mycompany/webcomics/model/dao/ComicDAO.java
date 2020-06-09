@@ -347,17 +347,15 @@ public class ComicDAO {
             
             String sql;
 
-            sql = "UPDATE `comic` SET com_titulo=?, com_cat_id=?, com_est_id=?, com_id_autor=?, com_descripcion=?, com_tapa=?, fecha=? WHERE com_id = " + comic.getComicId();
+            sql = "UPDATE `comic` SET com_titulo=?, com_est_id=?, com_id_autor=?, com_descripcion=?, fecha=? WHERE com_id = " + comic.getComicId();
 
             stm = con.prepareStatement(sql);
             
             stm.setString(1, comic.getComicTitulo());
-            stm.setInt(2, comic.getComicCategoria().getCatID());
-            stm.setInt(3, comic.getComicEstado().getEstadoId());
-            stm.setString(4, comic.getComicAutor());
-            stm.setString(5, comic.getComicDescripcion());
-            stm.setString(6, comic.getComicFoto());
-            stm.setString(7, comic.getComicFecha());
+            stm.setInt(2, comic.getComicEstado().getEstadoId());
+            stm.setString(3, comic.getComicAutor());
+            stm.setString(4, comic.getComicDescripcion());
+            stm.setString(5, comic.getComicFecha());
             
             
             stm.executeUpdate();
@@ -365,8 +363,10 @@ public class ComicDAO {
             stm.close();
             con.close();
             
+            System.out.println("comicEditado");
+            
         } catch (SQLException ex) {
-            System.out.println("Error al obtener comic");
+            System.out.println("Error editar comic");
         }
     }
     

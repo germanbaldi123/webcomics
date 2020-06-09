@@ -30,7 +30,7 @@ function generarTabla(data){
                                                    <div class="caption">
                                            
                                                    <h2><a href="UnComic?idComic=${unComic.comicId}" class="post-titulo"> ${unComic.comicTitulo} </a></h2>
-                                                   <span ><a href="" class="text-right"> ${unComic.comicCategoria.catNombre}</a></span>
+                                                   <span ><a href="" dissabled class="text-right"> ${unComic.comicCategoria.catNombre}</a></span>
                                                    <br>
                                                    <span class="post-fecha">${unComic.comicFecha} </span> por <span class="post-autor"><a href="#"> ${unComic.comicAutor} </a></span>
                                                    <p class="post-reseña"> ${unComic.comicDescripcion}
